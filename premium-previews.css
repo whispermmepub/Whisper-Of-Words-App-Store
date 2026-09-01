@@ -1,0 +1,36 @@
+
+/* Premium App Store preview cards.
+   WoW Note intentionally keeps its existing raw preview images. */
+.premium-preview-strip{gap:14px;align-items:stretch;padding:4px 1px 12px;scroll-padding-inline:2px}
+.promo-preview{position:relative;isolation:isolate;flex:0 0 316px;width:316px;aspect-ratio:9/16;overflow:hidden;border-radius:22px;scroll-snap-align:start;color:#f7fbff;background:
+radial-gradient(circle at 7% 78%,rgba(10,167,151,.28),transparent 29%),
+radial-gradient(circle at 110% 60%,rgba(0,186,222,.16),transparent 42%),
+linear-gradient(155deg,#020a14 0%,#031524 53%,#04101c 100%);
+border:1px solid rgba(230,168,58,.72);box-shadow:0 14px 34px rgba(0,0,0,.28),inset 0 0 40px rgba(0,185,205,.035)}
+.promo-preview::before{content:"";position:absolute;inset:0;z-index:-3;background:linear-gradient(115deg,transparent 58%,rgba(9,90,128,.17) 58.2%,transparent 79%)}
+.promo-preview::after{content:"";position:absolute;z-index:-1;width:230px;height:230px;border-radius:50%;right:-132px;top:42%;border:1.5px solid rgba(238,174,58,.9);box-shadow:0 0 12px rgba(234,177,65,.17),inset 22px 0 0 -21px rgba(3,202,222,.55)}
+.promo-grid-dots{position:absolute;z-index:-2;left:-1px;top:88px;width:96px;height:160px;opacity:.55;background-image:radial-gradient(circle,#03a9c8 1.15px,transparent 1.35px);background-size:10px 10px;mask-image:linear-gradient(90deg,#000,transparent)}
+.promo-ring{position:absolute;z-index:-2;right:-90px;top:46%;width:210px;height:210px;border:1px solid rgba(7,188,218,.5);border-radius:50%}
+.promo-brand{position:absolute;z-index:4;top:22px;left:24px;right:20px;display:flex;align-items:center;gap:13px;min-width:0}
+.promo-brand-icon{display:grid;place-items:center;width:54px;height:54px;flex:0 0 54px;border:2px solid #e7ae3f;border-radius:15px;background:rgba(3,18,27,.86);box-shadow:0 0 16px rgba(232,176,65,.16);overflow:hidden}
+.screenshot-strip .promo-brand-icon img{display:block;width:46px!important;height:46px!important;max-width:none!important;object-fit:contain!important;border:0!important;border-radius:11px!important;box-shadow:none!important;cursor:default!important}
+.promo-brand strong{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#e9ad42;font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1;font-weight:800;text-shadow:0 2px 10px rgba(240,178,61,.15)}
+.promo-flare{position:absolute;top:91px;left:31%;right:31%;height:1px;background:linear-gradient(90deg,transparent,#10becb 28%,#16e1e4 50%,#10becb 72%,transparent)}
+.promo-flare i{position:absolute;left:50%;top:50%;width:12px;height:12px;transform:translate(-50%,-50%) rotate(45deg);background:#18d8dd;box-shadow:0 0 14px rgba(26,224,228,.85);border-radius:1px}
+.promo-preview h3{position:absolute;z-index:4;top:111px;left:18px;right:18px;margin:0;text-align:center;color:#16cbd0;font-size:30px;line-height:1.02;font-weight:900;letter-spacing:-.025em;text-shadow:0 3px 15px rgba(9,204,213,.13)}
+.promo-preview>p{position:absolute;z-index:4;top:151px;left:24px;right:24px;margin:0;text-align:center;color:#f4f6f7;font-size:13px;line-height:1.25;font-weight:600}
+.promo-phone{position:absolute;z-index:3;left:50%;top:190px;bottom:46px;width:67%;transform:translateX(-50%);padding:7px;border-radius:28px;background:linear-gradient(150deg,#071017,#17252d 46%,#02070b 100%);border:2px solid rgba(163,220,225,.86);box-shadow:0 0 0 2px rgba(0,0,0,.7),0 0 20px rgba(21,200,214,.24),0 20px 24px rgba(0,0,0,.45);overflow:hidden}
+.promo-speaker{position:absolute;z-index:5;top:6px;left:35%;right:35%;height:3px;border-radius:10px;background:rgba(4,9,12,.9);box-shadow:0 1px 0 rgba(255,255,255,.18)}
+.screenshot-strip .promo-shot{display:block;width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;object-position:top center!important;margin:0!important;border:0!important;border-radius:20px!important;background:#020912;box-shadow:none!important;cursor:zoom-in!important;opacity:0;transition:opacity .18s ease}
+.screenshot-strip .promo-shot.is-loaded{opacity:1}
+.promo-phone-fallback{position:absolute;z-index:1;inset:7px;display:none;place-items:center;align-content:center;gap:12px;padding:24px;text-align:center;border-radius:20px;background:linear-gradient(165deg,#061928,#020a12)}
+.preview-fallback .promo-phone-fallback{display:grid}
+.screenshot-strip .promo-phone-fallback img{width:66px!important;height:66px!important;max-width:none!important;object-fit:contain!important;border:0!important;border-radius:17px!important;box-shadow:0 0 20px rgba(16,207,213,.14)!important;cursor:default!important}
+.promo-phone-fallback b{font-size:18px;color:#17cfd3}.promo-phone-fallback span{font-size:11px;line-height:1.45;color:#aebdca}
+.promo-stage{position:absolute;z-index:0;left:20px;right:20px;bottom:13px;height:56px;border-radius:50%;background:radial-gradient(ellipse,rgba(2,181,208,.18),rgba(2,12,20,.96) 54%,#02070b 65%);border:1.5px solid rgba(234,171,59,.85);box-shadow:0 0 18px rgba(3,179,198,.12)}
+.promo-side-icon{position:absolute;z-index:1;left:20px;bottom:92px;color:#e8ae41;font-size:35px;text-shadow:0 0 16px rgba(241,181,63,.5)}
+.premium-preview-strip .promo-preview:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(0,0,0,.34),0 0 0 1px rgba(15,202,213,.18)}
+.premium-preview-strip .promo-preview{transition:transform .16s ease,box-shadow .16s ease}
+.screenshot-strip:not(.premium-preview-strip) .raw-preview-shot{height:min(58vh,500px);width:auto;max-width:76vw;border-radius:16px;border:1px solid var(--line);scroll-snap-align:start;cursor:zoom-in;box-shadow:0 6px 18px rgba(15,23,42,.06)}
+@media(max-width:680px){.promo-preview{flex-basis:278px;width:278px;border-radius:19px}.promo-brand{top:19px;left:20px}.promo-brand-icon{width:48px;height:48px;flex-basis:48px}.screenshot-strip .promo-brand-icon img{width:41px!important;height:41px!important}.promo-brand strong{font-size:22px}.promo-flare{top:82px}.promo-preview h3{top:99px;font-size:26px}.promo-preview>p{top:134px;font-size:11.5px}.promo-phone{top:170px;bottom:42px;width:68%;border-radius:25px}.promo-stage{bottom:11px;height:50px}.promo-side-icon{left:16px;bottom:78px;font-size:30px}}
+@media(max-width:430px){.promo-preview{flex-basis:260px;width:260px}.promo-preview h3{font-size:24px}.promo-preview>p{left:18px;right:18px}.promo-phone{top:165px;width:69%}}
