@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-label="WoW Proof Reader icon">
+  <rect x="8" y="8" width="92" height="92" rx="10" fill="#FFF9EC"/>
+  <path fill="#E9DFC8" d="M22 31C31 27 41 27 51 32V78C41 73 31 73 22 77Z"/>
+  <path fill="#F7F1E3" d="M54 32C64 27 74 27 84 31V77C74 73 64 73 54 78Z"/>
+  <path d="M20 31V80C31 75 41 75 52 81C63 75 74 75 86 80V31M52 32V81" fill="none" stroke="#183B32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path fill="#0C7A5B" d="M73 21C84 15 91 14 92 14C90 25 84 37 71 44C65 47 61 50 58 55C61 46 65 38 73 21Z"/>
+  <path d="M88 18C77 27 68 38 59 55" fill="none" stroke="#0A5F47" stroke-width="2.2" stroke-linecap="round"/>
+  <path fill="#0C7A5B" d="M44 77H60V91L52 86L44 91Z"/>
+</svg>
