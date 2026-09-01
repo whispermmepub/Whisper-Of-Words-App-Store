@@ -91,6 +91,44 @@
         "title": "Offline and private",
         "text": "The app is designed for local document conversion. The APK is intentionally not hosted in the App Store repository yet and downloads remain disabled until release."
       }
+    },
+    {
+      "slug": "wow-ocr",
+      "name": "WoW OCR",
+      "developer": "Whisper Of Words",
+      "category": "Productivity",
+      "platform": "Android",
+      "price": "Free",
+      "version": "Preview",
+      "size": "—",
+      "android": "6.0+",
+      "updated": "September 2, 2026",
+      "packageName": "",
+      "icon": "assets/wow-app-store-logo.jpg",
+      "apk": "",
+      "source": "",
+      "comingSoon": true,
+      "shortDescription": "OCR and AI OCR tools for extracting and editing Myanmar text from document images.",
+      "description": "WoW OCR is a document OCR app focused on Myanmar text. Import or capture a page image, crop and enhance it, run OCR, switch between image and editable text views, and use optional online OCR or AI OCR providers when configured.",
+      "tags": ["OCR", "Myanmar", "AI OCR", "Document", "Text", "Offline"],
+      "screenshots": [],
+      "features": [
+        {"title":"Myanmar OCR","text":"Extract Myanmar text from document and book-page images."},
+        {"title":"Image tools","text":"Crop, rotate, convert to black and white, enhance pages and use a document lens workflow."},
+        {"title":"Editable text view","text":"Switch from the source image to OCR text, then copy, paste, clear and align extracted text."},
+        {"title":"AI OCR","text":"Optional AI OCR workflow for improved recognition when a supported provider is configured."},
+        {"title":"Optional Cloud Vision","text":"A user-supplied Google Cloud Vision API key can enable fast online document text detection."},
+        {"title":"Themes","text":"White, Black and Midnight appearance options are available in settings."}
+      ],
+      "whatsNew": [
+        "Preview listing added to the Whisper Of Words App Store.",
+        "Download is disabled while the app is being prepared for release.",
+        "APK will be added later when the release build is ready."
+      ],
+      "safety": {
+        "title": "Coming Soon",
+        "text": "No APK is hosted for this app yet. The App Store listing is preview-only until the release file is added."
+      }
     }
   ]
 }
