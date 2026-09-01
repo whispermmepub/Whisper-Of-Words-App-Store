@@ -1,0 +1,34 @@
+name: Import App Store Assets
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'staging/READY'
+permissions:
+  contents: write
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rebuild binary assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat staging/chunk-* | base64 -d > /tmp/store-assets.zip
+          unzip -o /tmp/store-assets.zip -d .
+          test -s apps/wow-reader/WoW-Reader-v2.13.0.apk
+          test -s apps/wow-reader/icon.jpg
+          test -s apps/wow-reader/screenshots/01-authors.jpg
+          rm -rf staging
+          rm -f .github/workflows/import-assets.yml
+      - name: Commit binary assets
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add WoW Reader v2.13.0 APK and screenshots'
+          git push
