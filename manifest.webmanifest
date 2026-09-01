@@ -5,5 +5,5 @@
   "display":"standalone",
   "background_color":"#071f31",
   "theme_color":"#071f31",
-  "icons":[{"src":"assets/wow-app-store-logo.jpg","sizes":"512x512","type":"image/jpeg","purpose":"any maskable"}]
+  "icons":[{"src":"https://raw.githubusercontent.com/whispermmepub/Whisper-Of-Words-App-Store/main/assets/wow-app-store-logo.jpg?v=20260902","sizes":"512x512","type":"image/jpeg","purpose":"any maskable"}]
 }
