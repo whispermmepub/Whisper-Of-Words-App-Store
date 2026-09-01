@@ -99,35 +99,45 @@
       "category": "Productivity",
       "platform": "Android",
       "price": "Free",
-      "version": "Preview",
+      "version": "0.8.0",
       "size": "—",
-      "android": "6.0+",
+      "android": "8.0+",
       "updated": "September 2, 2026",
-      "packageName": "",
-      "icon": "assets/wow-app-store-logo.jpg",
+      "packageName": "com.whispermmepub.wowocr",
+      "icon": "apps/wow-ocr/icon.svg",
       "apk": "",
       "source": "",
       "comingSoon": true,
-      "shortDescription": "OCR and AI OCR tools for extracting and editing Myanmar text from document images.",
-      "description": "WoW OCR is a document OCR app focused on Myanmar text. Import or capture a page image, crop and enhance it, run OCR, switch between image and editable text views, and use optional online OCR or AI OCR providers when configured.",
-      "tags": ["OCR", "Myanmar", "AI OCR", "Document", "Text", "Offline"],
-      "screenshots": [],
+      "shortDescription": "Scan documents, extract Myanmar text with OCR and AI OCR, edit it, and export on Android.",
+      "description": "WoW OCR is an Android-first scanning and OCR workspace built for Myanmar documents. Scan multiple pages, import photos or PDFs, clean and enhance page images, extract text with offline Myanmar OCR, hand pages to Google Lens when needed, use optional Cloud Vision or AI OCR providers, edit recognized text, and export your work as TXT, DOCX or PDF.",
+      "tags": ["OCR", "Myanmar", "AI OCR", "Scanner", "Document", "PDF", "DOCX", "Offline"],
+      "screenshots": [
+        "apps/wow-ocr/screenshots/01.webp.b64",
+        "apps/wow-ocr/screenshots/02.webp.b64",
+        "apps/wow-ocr/screenshots/03.webp.b64",
+        "apps/wow-ocr/screenshots/04.webp.b64"
+      ],
       "features": [
-        {"title":"Myanmar OCR","text":"Extract Myanmar text from document and book-page images."},
-        {"title":"Image tools","text":"Crop, rotate, convert to black and white, enhance pages and use a document lens workflow."},
-        {"title":"Editable text view","text":"Switch from the source image to OCR text, then copy, paste, clear and align extracted text."},
-        {"title":"AI OCR","text":"Optional AI OCR workflow for improved recognition when a supported provider is configured."},
-        {"title":"Optional Cloud Vision","text":"A user-supplied Google Cloud Vision API key can enable fast online document text detection."},
-        {"title":"Themes","text":"White, Black and Midnight appearance options are available in settings."}
+        {"title":"Multi-page scanner","text":"Scan documents with Google ML Kit Document Scanner, automatic edge handling and a phone-friendly page workflow."},
+        {"title":"Photo & PDF import","text":"Import one or many images from Gallery or Files, or import a PDF and render its pages into the document workspace."},
+        {"title":"Page cleanup tools","text":"Crop, rotate, grayscale and enhance scanned pages before recognition or export."},
+        {"title":"Myanmar OCR","text":"Use offline Myanmar OCR, with optional Google Cloud Vision for fast online document text detection."},
+        {"title":"AI OCR","text":"Choose a supported AI provider and use your own API key when higher-quality OCR is needed."},
+        {"title":"Google Lens handoff","text":"Open a page in Google Lens for interactive Lens-quality text selection, with share-sheet fallback where needed."},
+        {"title":"Text workspace","text":"Paste, edit, copy, find and replace recognized text, then export as TXT or DOCX."},
+        {"title":"PDF export","text":"Export all document pages as a PDF after organizing and cleaning the scan."},
+        {"title":"Page library","text":"Search, rename, duplicate, reorder and delete pages inside a multi-page document."},
+        {"title":"Appearance themes","text":"White, Black and Midnight appearance options are available from Settings."}
       ],
       "whatsNew": [
-        "Preview listing added to the Whisper Of Words App Store.",
-        "Download is disabled while the app is being prepared for release.",
-        "APK will be added later when the release build is ready."
+        "WoW OCR v0.8.0 preview listing added.",
+        "Rich text and page-continuation export improvements are included in the current build line.",
+        "Branded splash screen and document editing workflow are represented in this preview.",
+        "Download remains disabled until the release APK is intentionally published."
       ],
       "safety": {
-        "title": "Coming Soon",
-        "text": "No APK is hosted for this app yet. The App Store listing is preview-only until the release file is added."
+        "title": "Coming Soon — no APK hosted",
+        "text": "The App Store currently hosts only the WoW OCR listing, icon and preview images. The APK path is empty and the download button stays disabled until you choose to publish a release file."
       }
     }
   ]
