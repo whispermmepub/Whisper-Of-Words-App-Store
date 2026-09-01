@@ -24,7 +24,7 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           from PIL import Image, ImageFilter, ImageEnhance
-          import base64, io, json
+          import base64, io, json, re
 
           groups = [
               Path('apps/wow-ocr/screenshots'),
@@ -36,12 +36,11 @@ jobs:
                   src = folder / f'{i:02}.webp.b64'
                   if not src.exists():
                       continue
-                  raw = base64.b64decode(src.read_text(encoding='utf-8').strip())
+                  text = re.sub(r'\s+', '', src.read_text(encoding='utf-8').strip())
+                  text += '=' * ((4 - len(text) % 4) % 4)
+                  raw = base64.b64decode(text)
                   image = Image.open(io.BytesIO(raw)).convert('RGB')
 
-                  # UI screenshots are text-heavy. Keep the full frame, upscale only
-                  # when useful, then apply a restrained edge sharpen and store as PNG
-                  # so the App Store does not introduce another lossy generation.
                   target_w = max(image.width, 1080)
                   if target_w != image.width:
                       target_h = round(image.height * target_w / image.width)
