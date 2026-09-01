@@ -139,6 +139,49 @@
         "title": "Coming Soon — no APK hosted",
         "text": "The App Store currently hosts only the WoW OCR listing, icon and preview images. The APK path is empty and the download button stays disabled until you choose to publish a release file."
       }
+    },
+    {
+      "slug": "wow-proof-reader",
+      "name": "WoW Proof Reader",
+      "developer": "Whisper Of Words",
+      "category": "Books & Reference",
+      "platform": "Android",
+      "price": "Free",
+      "version": "0.7.9",
+      "size": "—",
+      "android": "6.0+",
+      "updated": "September 2, 2026",
+      "packageName": "",
+      "icon": "assets/wow-app-store-logo.jpg",
+      "apk": "",
+      "source": "",
+      "comingSoon": true,
+      "shortDescription": "Read, proof, edit and finish book-production DOCX files on Android, then export a polished EPUB.",
+      "description": "WoW Proof Reader is a phone-first Android proofreading workspace for book production. Open formatted DOCX files, read them in an ebook-like view, correct text while reading, review edited places, preserve the original Word package, create backups, and finish the corrected book as a validated EPUB without relying on a cloud conversion service at runtime.",
+      "tags": ["Proofreading", "DOCX", "EPUB", "Books", "Myanmar", "Editor", "Offline"],
+      "screenshots": [],
+      "features": [
+        {"title":"DOCX library","text":"Use a multi-DOCX library with search, sorting, Grid/List views, favorites, archive, trash, progress and quick resume."},
+        {"title":"Reader-first proofreading","text":"Read long DOCX books in an EPUB-like view with configurable typography, margins, themes, custom fonts and heading navigation."},
+        {"title":"Phone-friendly editing","text":"Double-tap paragraphs to edit, use find/replace, undo/redo, proof marks, bookmarks and crash-safe local drafts."},
+        {"title":"Edited Places review","text":"Compare original and edited paragraphs, review all changed locations and restore individual paragraphs when needed."},
+        {"title":"Formatting controls","text":"Edit Bold, paragraph alignment, paragraph style, page breaks, first-line indents and supported picture dimensions."},
+        {"title":"DOCX preservation","text":"Patch targeted OpenXML parts instead of rebuilding the whole document, preserve unchanged ZIP entries and create backups before overwriting."},
+        {"title":"Finish Proofing → EPUB","text":"Build EPUB 2 output with metadata, chapters, page breaks, footnotes, image sizing, Myanmar fonts and strict XML/package validation."},
+        {"title":"Live EPUB build","text":"Show visible DOCX PREP, EPUB BUILD, MEDIA OPTIMIZE, LAYOUT LINK and XML VERIFY stages until EPUB READY."},
+        {"title":"Built-in EPUB reader","text":"Verify exported EPUB files with NCX/nav support, table of contents, internal footnotes, themes and last-chapter resume."},
+        {"title":"Local-first privacy","text":"Core proofreading, EPUB generation, validation and reading are performed on-device with no account required for local books."}
+      ],
+      "whatsNew": [
+        "WoW Proof Reader v0.7.9 preview listing added.",
+        "Reader-first DOCX proofreading and save-back workflow prepared for App Store preview.",
+        "Finish Proofing → EPUB pipeline and built-in EPUB verification reader included in the current project line.",
+        "Download remains disabled until the release APK is intentionally published."
+      ],
+      "safety": {
+        "title": "Coming Soon — no APK hosted",
+        "text": "This listing is preview-only. The APK path is empty and the App Store download button stays disabled until a release file is intentionally published."
+      }
     }
   ]
 }
