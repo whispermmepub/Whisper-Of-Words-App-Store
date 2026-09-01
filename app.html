@@ -3,19 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#071f31">
+  <meta name="theme-color" content="#07111f">
   <title>App · Whisper Of Words App Store</title>
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="apps/wow-reader/icon.webp">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="site-glow site-glow-a"></div>
+  <div class="site-glow site-glow-b"></div>
+
   <header class="topbar">
-    <a class="brand" href="./"><span class="brand-mark">W</span><span><strong>Whisper Of Words</strong><small>App Store</small></span></a>
-    <nav class="top-actions"><button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button><a class="icon-btn" href="./" aria-label="Home">⌂</a></nav>
+    <a class="brand" href="./"><span class="brand-mark">W</span><span class="brand-copy"><strong>Whisper Of Words</strong><small>App Store</small></span></a>
+    <nav class="top-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      <a class="icon-btn" href="./" aria-label="Home" title="Home">⌂</a>
+    </nav>
   </header>
+
   <main id="detailRoot" class="detail-root"><div class="loading-card">Loading app…</div></main>
   <footer><span>© Whisper Of Words</span><span>Direct distribution from the developer</span></footer>
-  <dialog id="imageDialog" class="image-dialog"><button id="closeImage" aria-label="Close">×</button><img id="dialogImage" alt="App screenshot"></dialog>
+
+  <dialog id="imageDialog" class="image-dialog">
+    <button id="closeImage" aria-label="Close">×</button>
+    <img id="dialogImage" alt="App screenshot">
+  </dialog>
   <script src="detail.js" defer></script>
 </body>
 </html>
