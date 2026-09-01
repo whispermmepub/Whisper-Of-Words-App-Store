@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#07111f">
+  <meta name="theme-color" content="#f6f7f9">
   <meta name="description" content="Whisper Of Words App Store — official Android apps from Whisper Of Words.">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Whisper Of Words App Store">
   <meta property="og:title" content="Whisper Of Words App Store">
@@ -14,13 +13,10 @@
   <meta property="og:image" content="https://whispermmepub.github.io/Whisper-Of-Words-App-Store/apps/wow-reader/screenshots/01-splash.jpg">
   <meta property="og:image:secure_url" content="https://whispermmepub.github.io/Whisper-Of-Words-App-Store/apps/wow-reader/screenshots/01-splash.jpg">
   <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:alt" content="Whisper Of Words App Store — WoW Reader">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Whisper Of Words App Store">
   <meta name="twitter:description" content="Official Whisper Of Words Android apps with direct APK downloads.">
   <meta name="twitter:image" content="https://whispermmepub.github.io/Whisper-Of-Words-App-Store/apps/wow-reader/screenshots/01-splash.jpg">
-
   <link rel="canonical" href="https://whispermmepub.github.io/Whisper-Of-Words-App-Store/">
   <title>Whisper Of Words App Store</title>
   <link rel="manifest" href="manifest.webmanifest">
@@ -28,62 +24,47 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="site-glow site-glow-a"></div>
-  <div class="site-glow site-glow-b"></div>
-
   <header class="topbar">
     <a class="brand" href="./" aria-label="Whisper Of Words App Store home">
       <span class="brand-mark">W</span>
-      <span class="brand-copy"><strong>Whisper Of Words</strong><small>App Store</small></span>
+      <span><strong>Whisper Of Words</strong><small>App Store</small></span>
     </a>
-    <nav class="top-actions">
-      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">◐</button>
-      <a class="icon-btn" href="https://github.com/whispermmepub/Whisper-Of-Words-App-Store" target="_blank" rel="noreferrer" aria-label="GitHub repository" title="GitHub">⌘</a>
-    </nav>
+    <button class="theme-button" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
   </header>
 
-  <main>
-    <section class="hero-shell">
-      <div class="hero-copy">
-        <span class="eyebrow">OFFICIAL DISTRIBUTION</span>
-        <h1>Beautiful apps.<br><span>Built for readers.</span></h1>
-        <p>Trusted Whisper Of Words Android builds in one clean place — with direct APK downloads, release notes, screenshots and app details.</p>
-        <div class="hero-actions">
-          <a class="primary-action" href="#catalog">Explore apps</a>
-          <a class="secondary-action" href="app.html?app=wow-reader">View WoW Reader</a>
-        </div>
-        <div class="trust-row">
-          <span><b>✓</b> Direct APK</span>
-          <span><b>✓</b> Official builds</span>
-          <span><b>✓</b> No sign-in</span>
-        </div>
+  <main class="store-page">
+    <section class="store-heading">
+      <div>
+        <p class="kicker">APP STORE</p>
+        <h1>Discover</h1>
       </div>
-
-      <div class="hero-showcase" id="featuredApp" aria-live="polite">
-        <div class="showcase-skeleton"></div>
-      </div>
+      <span id="appCount" class="count-text"></span>
     </section>
 
-    <section class="catalog-toolbar" id="catalog">
-      <div class="section-heading">
-        <div><span class="eyebrow">DISCOVER</span><h2>Apps for you</h2></div>
-        <span id="appCount" class="count-badge"></span>
-      </div>
-      <label class="search-wrap" aria-label="Search apps">
-        <span class="search-icon">⌕</span>
-        <input id="search" type="search" placeholder="Search apps, features or developer" autocomplete="off">
-      </label>
+    <label class="search-bar">
+      <span>⌕</span>
+      <input id="search" type="search" placeholder="Search apps" autocomplete="off">
+    </label>
+
+    <section id="featuredApp" class="featured-slot" aria-live="polite"></section>
+
+    <section class="section-title-row" id="catalog">
+      <h2>Available apps</h2>
+      <span>Official builds</span>
     </section>
 
-    <section id="appGrid" class="app-grid" aria-live="polite"></section>
+    <section id="appGrid" class="app-list" aria-live="polite"></section>
 
-    <section class="future-card">
-      <div class="future-icon">＋</div>
-      <div><span class="eyebrow">COMING NEXT</span><h3>More Whisper Of Words apps</h3><p>The catalog is ready to grow without changing the storefront design.</p></div>
+    <section class="about-store-card">
+      <div class="about-icon">✓</div>
+      <div>
+        <strong>Direct from Whisper Of Words</strong>
+        <p>Download trusted APK builds directly. No account or sign-in required.</p>
+      </div>
     </section>
   </main>
 
-  <footer><span>© Whisper Of Words</span><span>Independent app catalog · Not affiliated with Google Play</span></footer>
+  <footer>Whisper Of Words · Independent Android app catalog</footer>
   <script src="store.js" defer></script>
 </body>
 </html>
