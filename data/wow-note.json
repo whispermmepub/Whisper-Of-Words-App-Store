@@ -1,0 +1,44 @@
+{
+  "slug":"wow-note",
+  "name":"WoW Note",
+  "developer":"Whisper Of Words",
+  "category":"Productivity",
+  "platform":"Android",
+  "price":"Free",
+  "version":"1.0.2",
+  "size":"1.3 MB",
+  "android":"8.0+",
+  "updated":"September 2, 2026",
+  "packageName":"com.whispermmepub.wowcolornote",
+  "icon":"apps/wow-note/icon.svg",
+  "apk":"https://raw.githubusercontent.com/whispermmepub/wow-color-note/main/dist/WoW-Note-v1.0.2.apk",
+  "source":"https://github.com/whispermmepub/wow-color-note",
+  "shortDescription":"A fast, lightweight Myanmar-first notes app with Myanmar Calendar, custom fonts and private local tools.",
+  "description":"WoW Note is a lightweight, instant-feeling notes app built for fast writing and comfortable Myanmar reading. Open existing notes in reader mode, edit only when you choose, create text notes or checklists, organize with colors and pins, search and sort quickly, add notes from a Myanmar Calendar, import your own fonts, tune font size and line height, lock private notes with a master PIN, set reminders, archive notes and keep local backups.",
+  "tags":["Notes","Myanmar","Myanmar Calendar","Checklist","Custom Fonts","Offline","Productivity","Reminder","Private"],
+  "screenshots":[
+    "apps/wow-note/screenshots/01-fast-notes.svg",
+    "apps/wow-note/screenshots/02-myanmar-calendar.svg",
+    "apps/wow-note/screenshots/03-private-secure.svg",
+    "apps/wow-note/screenshots/04-comfort-reading.svg"
+  ],
+  "features":[
+    {"title":"Fast local notes","text":"SQLite-backed local notes, quick launch, responsive search and lightweight list rendering keep everyday writing fast."},
+    {"title":"Text notes & checklists","text":"Create normal text notes or checklist-style notes and switch between the two when needed."},
+    {"title":"Myanmar Calendar","text":"Browse Gregorian dates together with Myanmar calendar information and create or open notes directly from a selected date."},
+    {"title":"Reader-first workflow","text":"Existing notes open in a clean read view first. Tap Edit only when you want to change the note, then save back to reading mode."},
+    {"title":"Comfortable typography","text":"Adjust font size and line height, import a custom font and use Myanmar-safe font fallback for comfortable long-form reading."},
+    {"title":"ColorNote-style organization","text":"Use note colors, pins, archive, search, sorting and List, Details, Grid or Large Grid views with a familiar bottom navigation flow."},
+    {"title":"Private notes","text":"Protect selected notes with a master PIN and unlock them only when you need to read or edit them."},
+    {"title":"Useful note actions","text":"Copy all, send/share, find text, set reminders, archive, delete and manage note colors from the note actions menu."},
+    {"title":"Backup & restore","text":"Export and restore your local note collection from Settings, including organization and note metadata."}
+  ],
+  "whatsNew":[
+    "Published WoW Note v1.0.2 for direct installation from WoW App Store.",
+    "Added ColorNote-style floating Add button, bottom navigation and Settings flow.",
+    "Existing notes now open in viewer mode instead of immediately entering edit mode.",
+    "Added Myanmar Calendar date-note flow, custom fonts, font size and line-height controls.",
+    "Added master-PIN note lock, reminders, archive, backup/restore, colors, pins, search and multiple list/grid views."
+  ],
+  "safety":{"title":"Local-first and private","text":"Core note content is stored locally on your Android device. No account is required for normal note use. Sharing, reminders, backup/export and any external actions happen only when you choose them."}
+}
