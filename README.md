@@ -11,3 +11,6 @@ The public storefront is built as a static GitHub Pages site. App metadata lives
 3. The home catalog and app detail view update from the same data.
 
 Current app: **WoW Reader**.
+
+The current downloadable build is **WoW Reader v2.13.0**. Screenshots are optional;
+the detail page hides the preview section until screenshot paths are added to the catalog.

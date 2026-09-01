@@ -14,7 +14,7 @@ function render(a){root.innerHTML=`
   <div class="install-row"><a class="install-btn" href="${esc(a.apk)}" download>Download APK</a><a class="secondary-btn" href="${esc(a.source)}">Source</a></div></div>
 </section>
 <section class="stats">${[['Version',a.version],['Size',a.size],['Android',a.android],['Price',a.price]].map(([l,v])=>`<div class="stat"><strong>${esc(v)}</strong><span>${esc(l)}</span></div>`).join('')}</section>
-<section class="content-section"><h2>Preview</h2><div class="screenshot-strip">${a.screenshots.map((s,i)=>`<img src="${esc(s)}" alt="${esc(a.name)} screenshot ${i+1}" loading="lazy" data-full="${esc(s)}">`).join('')}</div></section>
+${(a.screenshots||[]).length?`<section class="content-section"><h2>Preview</h2><div class="screenshot-strip">${a.screenshots.map((s,i)=>`<img src="${esc(s)}" alt="${esc(a.name)} screenshot ${i+1}" loading="lazy" data-full="${esc(s)}">`).join('')}</div></section>`:''}
 <section class="content-section"><h2>About this app</h2><p>${esc(a.description)}</p><div class="feature-grid">${a.features.map(f=>`<div class="feature"><strong>${esc(f.title)}</strong><span>${esc(f.text)}</span></div>`).join('')}</div></section>
 <section class="content-section"><h2>What's new</h2><div class="whats-new"><strong>Version ${esc(a.version)}</strong><ul>${a.whatsNew.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></section>
 <section class="content-section"><h2>Data safety</h2><div class="safety-card"><div class="safety-icon">⌾</div><div><strong>${esc(a.safety.title)}</strong><p>${esc(a.safety.text)}</p></div></div></section>

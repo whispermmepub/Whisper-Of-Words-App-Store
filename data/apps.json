@@ -16,21 +16,17 @@
       "android": "6.0+",
       "updated": "September 1, 2026",
       "packageName": "com.whisper.wowreader",
-      "icon": "apps/wow-reader/icon.jpg",
+      "icon": "apps/wow-reader/icon.webp",
       "apk": "apps/wow-reader/WoW-Reader-v2.13.0.apk",
       "source": "https://github.com/whispermmepub/wow-reader-app",
       "shortDescription": "A private, elegant EPUB & PDF reader built for comfortable Myanmar and English reading.",
       "description": "WoW Reader brings your EPUB and PDF library into a clean, distraction-free reading space. Import books once, organize them by title or author, read in immersive full screen, tune typography, use your own Myanmar fonts, and keep highlights, notes and reading progress on your device.",
       "tags": ["EPUB", "PDF", "Myanmar", "Reader", "Library", "Notes"],
       "screenshots": [
-        "apps/wow-reader/screenshots/01-authors.jpg",
-        "apps/wow-reader/screenshots/02-light-list.jpg",
+        "apps/wow-reader/screenshots/01-splash.jpg",
+        "apps/wow-reader/screenshots/02-navy-grid.jpg",
         "apps/wow-reader/screenshots/03-navy-list.jpg",
-        "apps/wow-reader/screenshots/04-splash.jpg",
-        "apps/wow-reader/screenshots/05-navy-telegram.jpg",
-        "apps/wow-reader/screenshots/06-navy-grid.jpg",
-        "apps/wow-reader/screenshots/07-grid-library.jpg",
-        "apps/wow-reader/screenshots/08-navy-explore.jpg"
+        "apps/wow-reader/screenshots/04-light-list.jpg"
       ],
       "features": [
         {"title":"EPUB & PDF library","text":"Import books into an app-owned local library and keep reading even if the original download is removed."},
