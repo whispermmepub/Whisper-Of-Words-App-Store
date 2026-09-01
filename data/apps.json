@@ -47,6 +47,46 @@
         "title": "Local-first by design",
         "text": "No Google account is required in this release. Imported books and reader data remain on your device unless you explicitly export or back them up."
       }
+    },
+    {
+      "slug": "wow-epub-maker",
+      "name": "WoW EPUB Maker",
+      "developer": "Whisper Of Words",
+      "category": "Books & Reference",
+      "platform": "Android",
+      "price": "Free",
+      "version": "0.2.0",
+      "size": "—",
+      "android": "6.0+",
+      "updated": "September 2, 2026",
+      "packageName": "",
+      "icon": "apps/wow-epub-maker/icon.jpg",
+      "apk": "",
+      "source": "",
+      "comingSoon": true,
+      "shortDescription": "Convert DOCX into a compact, beautifully structured EPUB entirely on your device.",
+      "description": "WoW EPUB Maker is an offline DOCX-to-EPUB builder designed for private, on-device conversion. Choose a Word document, set book details, preserve useful document structure and create an EPUB without uploading the source document to a server.",
+      "tags": ["EPUB", "DOCX", "Converter", "Offline", "Myanmar", "Books"],
+      "screenshots": [
+        "apps/wow-epub-maker/screenshots/01.jpg"
+      ],
+      "features": [
+        {"title":"100% offline","text":"DOCX conversion is designed to run on the device without sending the document to an online conversion service."},
+        {"title":"DOCX to EPUB","text":"Build a structured EPUB from Microsoft Word documents with title and author metadata."},
+        {"title":"Document preservation","text":"Preserves useful page structure, footnotes, Word layout, chapters and fonts where appropriate."},
+        {"title":"Optimized images","text":"Keeps image display size while optimizing assets for a smaller EPUB package."},
+        {"title":"Live build progress","text":"Shows conversion stages and a live build log while the EPUB is being created."},
+        {"title":"Read after build","text":"Open the newly created EPUB directly after a successful conversion."}
+      ],
+      "whatsNew": [
+        "Preview listing for WoW EPUB Maker v0.2.0.",
+        "Download is temporarily disabled while the release build is prepared.",
+        "APK will be published only when the release is ready."
+      ],
+      "safety": {
+        "title": "Offline and private",
+        "text": "The app is designed for local document conversion. The APK is intentionally not hosted in the App Store repository yet and downloads remain disabled until release."
+      }
     }
   ]
 }
