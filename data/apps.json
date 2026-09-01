@@ -68,7 +68,11 @@
       "description": "WoW EPUB Maker is an offline DOCX-to-EPUB builder designed for private, on-device conversion. Choose a Word document, set book details, preserve useful document structure and create an EPUB without uploading the source document to a server.",
       "tags": ["EPUB", "DOCX", "Converter", "Offline", "Myanmar", "Books"],
       "screenshots": [
-        "apps/wow-epub-maker/screenshots/01.jpg"
+        "apps/wow-epub-maker/screenshots/01.webp.b64",
+        "apps/wow-epub-maker/screenshots/02.webp.b64",
+        "apps/wow-epub-maker/screenshots/03.webp.b64",
+        "apps/wow-epub-maker/screenshots/04.webp.b64",
+        "apps/wow-epub-maker/screenshots/05.webp.b64"
       ],
       "features": [
         {"title":"100% offline","text":"DOCX conversion is designed to run on the device without sending the document to an online conversion service."},
