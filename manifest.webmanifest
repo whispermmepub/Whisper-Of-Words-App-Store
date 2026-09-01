@@ -1,0 +1,9 @@
+{
+  "name":"Whisper Of Words App Store",
+  "short_name":"WoW App Store",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#071f31",
+  "theme_color":"#071f31",
+  "icons":[{"src":"apps/wow-reader/icon.jpg","sizes":"282x282","type":"image/jpeg","purpose":"any maskable"}]
+}
