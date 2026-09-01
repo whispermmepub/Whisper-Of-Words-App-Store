@@ -5,5 +5,5 @@
   "display":"standalone",
   "background_color":"#071f31",
   "theme_color":"#071f31",
-  "icons":[{"src":"apps/wow-reader/icon.jpg","sizes":"282x282","type":"image/jpeg","purpose":"any maskable"}]
+  "icons":[{"src":"assets/wow-app-store-logo.jpg","sizes":"512x512","type":"image/jpeg","purpose":"any maskable"}]
 }
