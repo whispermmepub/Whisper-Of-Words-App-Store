@@ -1,0 +1,72 @@
+name: Repair preview image quality
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/repair-preview-quality.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check pillow
+      - name: Rebuild previews as sharp PNG files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageFilter, ImageEnhance
+          import base64, io, json
+
+          groups = [
+              Path('apps/wow-ocr/screenshots'),
+              Path('apps/wow-proof-reader/screenshots'),
+          ]
+
+          for folder in groups:
+              for i in range(1, 5):
+                  src = folder / f'{i:02}.webp.b64'
+                  if not src.exists():
+                      continue
+                  raw = base64.b64decode(src.read_text(encoding='utf-8').strip())
+                  image = Image.open(io.BytesIO(raw)).convert('RGB')
+
+                  # UI screenshots are text-heavy. Keep the full frame, upscale only
+                  # when useful, then apply a restrained edge sharpen and store as PNG
+                  # so the App Store does not introduce another lossy generation.
+                  target_w = max(image.width, 1080)
+                  if target_w != image.width:
+                      target_h = round(image.height * target_w / image.width)
+                      image = image.resize((target_w, target_h), Image.Resampling.LANCZOS)
+                  image = ImageEnhance.Contrast(image).enhance(1.03)
+                  image = image.filter(ImageFilter.UnsharpMask(radius=1.1, percent=145, threshold=2))
+                  image.save(folder / f'{i:02}.png', 'PNG', optimize=True)
+
+          data_path = Path('data/apps.json')
+          data = json.loads(data_path.read_text(encoding='utf-8'))
+          for app in data.get('apps', []):
+              if app.get('slug') in {'wow-ocr', 'wow-proof-reader'}:
+                  app['screenshots'] = [
+                      f"apps/{app['slug']}/screenshots/{i:02}.png" for i in range(1, 5)
+                  ]
+          data_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+      - name: Commit repaired previews
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/wow-ocr/screenshots/*.png apps/wow-proof-reader/screenshots/*.png data/apps.json
+          if git diff --cached --quiet; then
+            echo "No preview changes to commit"
+            exit 0
+          fi
+          git commit -m "Use sharp PNG previews for OCR and Proof Reader"
+          git push
