@@ -1,38 +1,15 @@
 {
-  "store": {
-    "name": "Whisper Of Words App Store",
-    "developer": "Whisper Of Words"
-  },
-  "apps": [
+  "store":{"name":"Whisper Of Words App Store","developer":"Whisper Of Words"},
+  "apps":[
     {
-      "slug": "wow-reader",
-      "name": "WoW Reader",
-      "developer": "Whisper Of Words",
-      "category": "Books & Reference",
-      "platform": "Android",
-      "price": "Free",
-      "version": "2.13.0",
-      "size": "2.8 MB",
-      "android": "6.0+",
-      "updated": "September 1, 2026",
-      "packageName": "com.whisper.wowreader",
-      "icon": "apps/wow-reader/icon.webp",
-      "apk": "apps/wow-reader/WoW-Reader-v2.13.0.apk",
-      "source": "https://github.com/whispermmepub/wow-reader-app",
-      "shortDescription": "A private, elegant EPUB & PDF reader built for comfortable Myanmar and English reading.",
-      "description": "WoW Reader brings your EPUB and PDF library into a clean, distraction-free reading space. Import books once, organize them by title or author, read in immersive full screen, tune typography, use your own Myanmar fonts, and keep highlights, notes and reading progress on your device.",
-      "tags": ["EPUB", "PDF", "Myanmar", "Reader", "Library", "Notes"],
-      "screenshots": ["apps/wow-reader/screenshots/01-splash.jpg","apps/wow-reader/screenshots/02-navy-grid.jpg","apps/wow-reader/screenshots/03-navy-list.jpg","apps/wow-reader/screenshots/04-light-list.jpg"],
-      "features": [
-        {"title":"EPUB & PDF library","text":"Import books into an app-owned local library and keep reading even if the original download is removed."},
-        {"title":"Myanmar typography","text":"Pyidaungsu and multiple built-in Myanmar fonts, plus custom font import and live display controls."},
-        {"title":"Immersive reading","text":"Edge-to-edge full-screen reading with page or scroll mode, themes, margins, line height and brightness controls."},
-        {"title":"Notes & highlights","text":"Highlight passages, save notes, bookmark pages and return to your saved reading positions."},
-        {"title":"Author shelves","text":"Group books by EPUB author metadata and instantly filter the library to one writer."},
-        {"title":"Adaptive library","text":"Responsive list/grid layouts scale from phones to tablets, foldables and landscape screens."}
-      ],
-      "whatsNew": ["Added White, Black and Navy Premium app themes.","Made None and Slide page animations behave distinctly.","Smoothed chapter transitions and reduced visible loading/settling.","Imported books are kept as app-owned local copies until you remove them from the library.","Kept author grouping, responsive library layouts and reader display controls polished for daily use."],
-      "safety": {"title":"Local-first by design","text":"No Google account is required in this release. Imported books and reader data remain on your device unless you explicitly export or back them up."}
+      "slug":"wow-reader","name":"WoW Reader","developer":"Whisper Of Words","category":"Books & Reference","platform":"Android","price":"Free","version":"2.13.0","size":"2.8 MB","android":"6.0+","updated":"September 1, 2026","packageName":"com.whisper.wowreader","icon":"apps/wow-reader/icon.webp","apk":"apps/wow-reader/WoW-Reader-v2.13.0.apk","source":"https://github.com/whispermmepub/wow-reader-app",
+      "shortDescription":"A private, elegant EPUB & PDF reader built for comfortable Myanmar and English reading.",
+      "description":"WoW Reader brings your EPUB and PDF library into a clean, distraction-free reading space. Import books once, organize them by title or author, read in immersive full screen, tune typography, use your own Myanmar fonts, and keep highlights, notes and reading progress on your device.",
+      "tags":["EPUB","PDF","Myanmar","Reader","Library","Notes"],
+      "screenshots":["apps/wow-reader/screenshots/01-splash.jpg","apps/wow-reader/screenshots/02-navy-grid.jpg","apps/wow-reader/screenshots/03-navy-list.jpg","apps/wow-reader/screenshots/04-light-list.jpg"],
+      "features":[{"title":"EPUB & PDF library","text":"Import books into an app-owned local library and keep reading even if the original download is removed."},{"title":"Myanmar typography","text":"Pyidaungsu and multiple built-in Myanmar fonts, plus custom font import and live display controls."},{"title":"Immersive reading","text":"Edge-to-edge full-screen reading with page or scroll mode, themes, margins, line height and brightness controls."},{"title":"Notes & highlights","text":"Highlight passages, save notes, bookmark pages and return to your saved reading positions."},{"title":"Author shelves","text":"Group books by EPUB author metadata and instantly filter the library to one writer."},{"title":"Adaptive library","text":"Responsive list/grid layouts scale from phones to tablets, foldables and landscape screens."}],
+      "whatsNew":["Added White, Black and Navy Premium app themes.","Made None and Slide page animations behave distinctly.","Smoothed chapter transitions and reduced visible loading/settling.","Imported books are kept as app-owned local copies until you remove them from the library.","Kept author grouping, responsive library layouts and reader display controls polished for daily use."],
+      "safety":{"title":"Local-first by design","text":"No Google account is required in this release. Imported books and reader data remain on your device unless you explicitly export or back them up."}
     },
     {
       "slug":"wow-epub-maker","name":"WoW EPUB Maker","developer":"Whisper Of Words","category":"Books & Reference","platform":"Android","price":"Free","version":"0.2.0","size":"—","android":"6.0+","updated":"September 2, 2026","packageName":"","icon":"apps/wow-epub-maker/icon.jpg","apk":"","source":"","comingSoon":true,
@@ -59,7 +36,7 @@
       "shortDescription":"Read, proof, edit and finish book-production DOCX files on Android, then export a polished EPUB.",
       "description":"WoW Proof Reader is a phone-first Android proofreading workspace for book production. Open formatted DOCX files, read them in an ebook-like view, correct text while reading, review edited places, preserve the original Word package, create backups, and finish the corrected book as a validated EPUB without relying on a cloud conversion service at runtime.",
       "tags":["Proofreading","DOCX","EPUB","Books","Myanmar","Editor","Offline"],
-      "screenshots":[],
+      "screenshots":["apps/wow-proof-reader/screenshots/01.webp.b64","apps/wow-proof-reader/screenshots/02.webp.b64","apps/wow-proof-reader/screenshots/03.webp.b64","apps/wow-proof-reader/screenshots/04.webp.b64"],
       "features":[{"title":"DOCX library","text":"Use a multi-DOCX library with search, sorting, Grid/List views, favorites, archive, trash, progress and quick resume."},{"title":"Reader-first proofreading","text":"Read long DOCX books in an EPUB-like view with configurable typography, margins, themes, custom fonts and heading navigation."},{"title":"Phone-friendly editing","text":"Double-tap paragraphs to edit, use find/replace, undo/redo, proof marks, bookmarks and crash-safe local drafts."},{"title":"Edited Places review","text":"Compare original and edited paragraphs, review all changed locations and restore individual paragraphs when needed."},{"title":"Formatting controls","text":"Edit Bold, paragraph alignment, paragraph style, page breaks, first-line indents and supported picture dimensions."},{"title":"DOCX preservation","text":"Patch targeted OpenXML parts instead of rebuilding the whole document, preserve unchanged ZIP entries and create backups before overwriting."},{"title":"Finish Proofing → EPUB","text":"Build EPUB 2 output with metadata, chapters, page breaks, footnotes, image sizing, Myanmar fonts and strict XML/package validation."},{"title":"Live EPUB build","text":"Show visible DOCX PREP, EPUB BUILD, MEDIA OPTIMIZE, LAYOUT LINK and XML VERIFY stages until EPUB READY."},{"title":"Built-in EPUB reader","text":"Verify exported EPUB files with NCX/nav support, table of contents, internal footnotes, themes and last-chapter resume."},{"title":"Local-first privacy","text":"Core proofreading, EPUB generation, validation and reading are performed on-device with no account required for local books."}],
       "whatsNew":["WoW Proof Reader v0.7.9 preview listing added.","Reader-first DOCX proofreading and save-back workflow prepared for App Store preview.","Finish Proofing → EPUB pipeline and built-in EPUB verification reader included in the current project line.","Download remains disabled until the release APK is intentionally published."],
       "safety":{"title":"Coming Soon — no APK hosted","text":"This listing is preview-only. The APK path is empty and the App Store download button stays disabled until a release file is intentionally published."}
