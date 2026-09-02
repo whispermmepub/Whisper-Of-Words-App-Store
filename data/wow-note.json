@@ -5,13 +5,13 @@
   "category":"Productivity",
   "platform":"Android",
   "price":"Free",
-  "version":"1.0.2",
+  "version":"1.0.3",
   "size":"1.3 MB",
   "android":"8.0+",
   "updated":"September 2, 2026",
   "packageName":"com.whispermmepub.wowcolornote",
   "icon":"apps/wow-note/icon.svg",
-  "apk":"https://raw.githubusercontent.com/whispermmepub/wow-color-note/main/dist/WoW-Note-v1.0.2.apk",
+  "apk":"https://raw.githubusercontent.com/whispermmepub/wow-color-note/main/dist/WoW-Note-v1.0.3.apk",
   "source":"https://github.com/whispermmepub/wow-color-note",
   "shortDescription":"A fast, lightweight Myanmar-first notes app with Myanmar Calendar, custom fonts and private local tools.",
   "description":"WoW Note is a lightweight, instant-feeling notes app built for fast writing and comfortable Myanmar reading. Open existing notes in reader mode, edit only when you choose, create text notes or checklists, organize with colors and pins, search and sort quickly, add notes from a Myanmar Calendar, import your own fonts, tune font size and line height, lock private notes with a master PIN, set reminders, archive notes and keep local backups.",
@@ -34,11 +34,9 @@
     {"title":"Backup & restore","text":"Export and restore your local note collection from Settings, including organization and note metadata."}
   ],
   "whatsNew":[
-    "Published WoW Note v1.0.2 for direct installation from WoW App Store.",
-    "Added ColorNote-style floating Add button, bottom navigation and Settings flow.",
-    "Existing notes now open in viewer mode instead of immediately entering edit mode.",
-    "Added Myanmar Calendar date-note flow, custom fonts, font size and line-height controls.",
-    "Added master-PIN note lock, reminders, archive, backup/restore, colors, pins, search and multiple list/grid views."
+    "Fixed App Store Open so the installed app can be launched directly from the browser.",
+    "Added a browser-safe deep link entry point for WoW Note.",
+    "Kept the reader-first note workflow, Myanmar Calendar, custom fonts, private-note lock, reminders and backup tools from v1.0.2."
   ],
   "safety":{"title":"Local-first and private","text":"Core note content is stored locally on your Android device. No account is required for normal note use. Sharing, reminders, backup/export and any external actions happen only when you choose them."}
 }
