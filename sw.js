@@ -1,5 +1,5 @@
-const CACHE='wow-app-store-v20';
-const CORE=['./','index.html','app.html','styles.css?v=20','store.js?v=20','detail.js?v=20','data/apps.json?v=20','data/wow-note.json?v=20','manifest.webmanifest?v=20'];
+const CACHE='wow-app-store-v21';
+const CORE=['./','index.html','app.html','styles.css?v=20','reviews.css?v=21','store.js?v=20','detail.js?v=20','data/apps.json?v=21','data/wow-note.json?v=21','manifest.webmanifest?v=20'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()]))});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const url=new URL(e.request.url);if(url.origin!==location.origin)return;e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{if(r.ok){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return r}).catch(()=>caches.match(e.request)))});
