@@ -3,67 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f8fa">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Whisper Of Words App Store — official Android apps from Whisper Of Words.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Whisper Of Words App Store">
   <meta property="og:title" content="Whisper Of Words App Store">
-  <meta property="og:description" content="Official Whisper Of Words Android apps with direct APK downloads, screenshots, release notes and app details.">
+  <meta property="og:description" content="Official Whisper Of Words Android apps, previews and releases.">
   <meta property="og:url" content="https://whispermmepub.github.io/Whisper-Of-Words-App-Store/">
-  <meta property="og:image" content="https://raw.githubusercontent.com/whispermmepub/Whisper-Of-Words-App-Store/main/assets/wow-app-store-logo.jpg?v=20260902">
-  <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/whispermmepub/Whisper-Of-Words-App-Store/main/assets/wow-app-store-logo.jpg?v=20260902">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="512">
-  <meta property="og:image:height" content="512">
+  <meta property="og:image" content="https://raw.githubusercontent.com/whispermmepub/Whisper-Of-Words-App-Store/main/assets/wow-app-store-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Whisper Of Words App Store">
-  <meta name="twitter:description" content="Official Whisper Of Words Android apps with direct APK downloads.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/whispermmepub/Whisper-Of-Words-App-Store/main/assets/wow-app-store-logo.jpg?v=20260902">
   <link rel="canonical" href="https://whispermmepub.github.io/Whisper-Of-Words-App-Store/">
   <title>Whisper Of Words App Store</title>
-  <link rel="manifest" href="manifest.webmanifest?v=8">
-  <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/whispermmepub/Whisper-Of-Words-App-Store/main/assets/wow-app-store-logo.jpg?v=20260902">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/whispermmepub/Whisper-Of-Words-App-Store/main/assets/wow-app-store-logo.jpg?v=20260902">
-  <link rel="stylesheet" href="styles.css?v=9">
-  <link rel="stylesheet" href="coming-soon.css?v=9">
+  <link rel="manifest" href="manifest.webmanifest?v=20">
+  <link rel="icon" type="image/jpeg" href="assets/wow-app-store-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/wow-app-store-logo.jpg">
+  <link rel="stylesheet" href="styles.css?v=20">
 </head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="./" aria-label="Whisper Of Words App Store home">
-      <img class="brand-mark" src="https://raw.githubusercontent.com/whispermmepub/Whisper-Of-Words-App-Store/main/assets/wow-app-store-logo.jpg?v=20260902" onerror="this.onerror=null;this.src='apps/wow-reader/icon.webp'" alt="Whisper Of Words App Store" width="42" height="42">
-      <span class="brand-copy"><strong>Whisper Of Words</strong><small>App Store</small></span>
-    </a>
-    <button class="theme-button" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
-  </header>
+<body class="store-body">
+  <div class="app-shell">
+    <header class="mobile-header">
+      <div>
+        <span class="eyebrow">WHISPER OF WORDS</span>
+        <h1 id="screenTitle">App Store</h1>
+      </div>
+      <a class="profile-mark" href="#library" aria-label="Open Library">
+        <img src="assets/wow-app-store-logo.jpg" alt="">
+      </a>
+    </header>
 
-  <main class="store-page">
-    <section class="store-heading">
-      <div><p class="kicker">OFFICIAL APPS</p><h1>Discover</h1></div>
-      <span id="appCount" class="count-text"></span>
-    </section>
+    <main class="store-main">
+      <section class="screen is-active" data-screen="home" id="homeScreen">
+        <div id="featuredApp" class="featured-slot" aria-live="polite"></div>
 
-    <label class="search-bar">
-      <span class="search-icon">⌕</span>
-      <input id="search" type="search" placeholder="Search apps" autocomplete="off">
-    </label>
+        <section class="home-section">
+          <div class="section-heading"><h2>Categories</h2><a href="#apps">See all</a></div>
+          <div id="categoryChips" class="category-strip"></div>
+        </section>
 
-    <section class="section-title-row featured-title-row">
-      <h2>Featured</h2><span>Latest release</span>
-    </section>
-    <section id="featuredApp" class="featured-slot" aria-live="polite"></section>
+        <section class="home-section">
+          <div class="section-heading"><h2>New Apps</h2><a href="#apps">See all</a></div>
+          <div id="newApps" class="mini-card-strip"></div>
+        </section>
 
-    <section class="section-title-row" id="catalog">
-      <h2>All apps</h2><span>Apps & previews</span>
-    </section>
-    <section id="appGrid" class="app-list" aria-live="polite"></section>
+        <section class="home-section">
+          <div class="section-heading"><h2>Recently Updated</h2><a href="#updates">See all</a></div>
+          <div id="recentApps" class="app-list compact-list"></div>
+        </section>
+      </section>
 
-    <section class="about-store-card">
-      <div class="about-icon">✓</div>
-      <div><strong>Direct from Whisper Of Words</strong><p>Official app listings and trusted release builds.</p></div>
-    </section>
-  </main>
+      <section class="screen" data-screen="apps" id="appsScreen">
+        <label class="search-bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.4-4.4m2.4-5.1a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+          <input id="search" type="search" placeholder="Search apps" autocomplete="off">
+        </label>
+        <div id="searchCategories" class="filter-strip"></div>
+        <div class="section-heading list-heading"><h2>All Apps</h2><span id="appCount"></span></div>
+        <section id="appGrid" class="app-list" aria-live="polite"></section>
+      </section>
 
-  <footer>Whisper Of Words · Independent Android app catalog</footer>
-  <script src="store.js?v=10" defer></script>
+      <section class="screen" data-screen="updates" id="updatesScreen">
+        <section class="home-section first-section">
+          <div class="section-heading"><h2>Available Updates</h2></div>
+          <div id="availableUpdates" class="app-list"></div>
+        </section>
+        <section class="home-section">
+          <div class="section-heading"><h2>Recently Updated</h2></div>
+          <div id="updatesRecent" class="app-list"></div>
+        </section>
+      </section>
+
+      <section class="screen" data-screen="library" id="libraryScreen">
+        <div class="library-card">
+          <div class="library-icon">↓</div>
+          <h2>Your Library</h2>
+          <p>Apps you install or update from this store appear here for quick access.</p>
+        </div>
+        <div id="libraryApps" class="app-list"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <a href="#home" data-nav="home" class="is-active">
+        <svg viewBox="0 0 24 24"><path d="M3.5 10.8 12 4l8.5 6.8v8.7a.5.5 0 0 1-.5.5h-5v-6H9v6H4a.5.5 0 0 1-.5-.5Z"/></svg>
+        <span>Home</span>
+      </a>
+      <a href="#apps" data-nav="apps">
+        <svg viewBox="0 0 24 24"><path d="M5 4h5v5H5zm9 0h5v5h-5zM5 15h5v5H5zm9 0h5v5h-5z"/></svg>
+        <span>Apps</span>
+      </a>
+      <a href="#updates" data-nav="updates">
+        <svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></svg>
+        <span>Updates</span>
+      </a>
+      <a href="#library" data-nav="library">
+        <svg viewBox="0 0 24 24"><path d="M5 4.5h14v15H5zM9 4.5v15M9 8h10"/></svg>
+        <span>Library</span>
+      </a>
+    </nav>
+  </div>
+  <script src="store.js?v=20" defer></script>
 </body>
 </html>
