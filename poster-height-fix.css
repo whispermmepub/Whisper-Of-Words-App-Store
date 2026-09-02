@@ -1,0 +1,33 @@
+/* Make OCR + Proof Reader preview posters tall like full app-store creatives. WoW Note is untouched. */
+.designed-preview-strip .designed-poster{
+  aspect-ratio:9/16 !important;
+  flex:0 0 316px !important;
+  width:316px !important;
+}
+.designed-preview-strip .poster-phone{
+  top:184px !important;
+  bottom:46px !important;
+  width:70% !important;
+}
+@media(max-width:680px){
+  .designed-preview-strip .designed-poster{
+    flex-basis:278px !important;
+    width:278px !important;
+  }
+  .designed-preview-strip .poster-phone{
+    top:166px !important;
+    bottom:40px !important;
+    width:71% !important;
+  }
+}
+@media(max-width:430px){
+  .designed-preview-strip .designed-poster{
+    flex-basis:260px !important;
+    width:260px !important;
+  }
+  .designed-preview-strip .poster-phone{
+    top:160px !important;
+    bottom:36px !important;
+    width:72% !important;
+  }
+}
