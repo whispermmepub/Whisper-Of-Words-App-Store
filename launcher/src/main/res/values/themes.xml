@@ -1,0 +1,10 @@
+<resources>
+    <style name="Theme.WoWLauncher" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">#5E2750</item>
+        <item name="android:navigationBarColor">#2C1026</item>
+        <item name="android:colorAccent">#E95420</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>
