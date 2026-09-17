@@ -1,0 +1,81 @@
+name: WoW Reader 100k Experimental Build
+
+on:
+  push:
+    branches: [reader-exp-100k]
+    paths:
+      - '.github/workflows/reader-exp-100k.yml'
+      - 'reader-exp/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout build-lab branch
+        uses: actions/checkout@v4
+        with:
+          path: build-lab
+
+      - name: Checkout WoW Reader v63 baseline
+        uses: actions/checkout@v4
+        with:
+          repository: whispermmepub/wow-reader-lab
+          ref: 60a0e8640cbcdfd81002367df603aa35acf30d52
+          path: reader
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle 8.11.1
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android 36 SDK
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0' 'platform-tools'
+
+      - name: Apply experimental patches
+        run: |
+          if [ -f build-lab/reader-exp/apply.py ]; then
+            python3 build-lab/reader-exp/apply.py "$GITHUB_WORKSPACE/reader"
+          else
+            echo 'No experimental patch script yet; building clean v63 baseline.'
+          fi
+
+      - name: Verify package identity
+        working-directory: reader
+        run: |
+          grep -q 'applicationId "com.whisper.wowreader"' app/build.gradle
+          grep -q 'versionCode 63' app/build.gradle
+          grep -q 'versionName "2.19.3"' app/build.gradle
+
+      - name: Build experimental debug APK
+        working-directory: reader
+        run: gradle :app:assembleDebug :app:lintDebug --stacktrace
+
+      - name: Collect APK
+        run: |
+          mkdir -p out
+          cp reader/app/build/outputs/apk/debug/app-debug.apk out/WoW-Reader-v63-100k-experimental-debug.apk
+          sha256sum out/WoW-Reader-v63-100k-experimental-debug.apk | tee out/SHA256SUMS.txt
+
+      - name: Upload experimental artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wow-reader-v63-100k-experimental
+          path: out/*
+          if-no-files-found: error
+          retention-days: 7
