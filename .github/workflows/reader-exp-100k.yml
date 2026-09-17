@@ -88,24 +88,24 @@ jobs:
           grep -q 'versionCode 63' app/build.gradle
           grep -q "versionName '2.19.3'" app/build.gradle
 
-      - name: Build experimental debug APK
+      - name: Build experimental unsigned release APK
         working-directory: reader
-        run: gradle :app:assembleDebug :app:lintDebug --stacktrace
+        run: gradle :app:assembleRelease :app:lintRelease --stacktrace
 
-      - name: Collect APK and local signing tools
+      - name: Collect unsigned release APK and local signing tools
         run: |
           mkdir -p out/signing-tools/lib
-          cp reader/app/build/outputs/apk/debug/app-debug.apk out/WoW-Reader-v63-100k-experimental-debug.apk
+          cp reader/app/build/outputs/apk/release/app-release-unsigned.apk out/WoW-Reader-v63-100k-experimental-unsigned.apk
           cp "$ANDROID_HOME/build-tools/36.0.0/apksigner" out/signing-tools/apksigner
           cp "$ANDROID_HOME/build-tools/36.0.0/lib/apksigner.jar" out/signing-tools/lib/apksigner.jar
           cp "$ANDROID_HOME/build-tools/36.0.0/zipalign" out/signing-tools/zipalign
           chmod +x out/signing-tools/apksigner out/signing-tools/zipalign
-          sha256sum out/WoW-Reader-v63-100k-experimental-debug.apk | tee out/SHA256SUMS.txt
+          sha256sum out/WoW-Reader-v63-100k-experimental-unsigned.apk | tee out/SHA256SUMS.txt
 
       - name: Upload experimental artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wow-reader-v63-100k-experimental
+          name: wow-reader-v63-100k-experimental-release
           path: out/*
           if-no-files-found: error
           retention-days: 7
