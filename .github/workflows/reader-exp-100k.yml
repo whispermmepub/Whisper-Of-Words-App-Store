@@ -92,10 +92,14 @@ jobs:
         working-directory: reader
         run: gradle :app:assembleDebug :app:lintDebug --stacktrace
 
-      - name: Collect APK
+      - name: Collect APK and local signing tools
         run: |
-          mkdir -p out
+          mkdir -p out/signing-tools/lib
           cp reader/app/build/outputs/apk/debug/app-debug.apk out/WoW-Reader-v63-100k-experimental-debug.apk
+          cp "$ANDROID_HOME/build-tools/36.0.0/apksigner" out/signing-tools/apksigner
+          cp "$ANDROID_HOME/build-tools/36.0.0/lib/apksigner.jar" out/signing-tools/lib/apksigner.jar
+          cp "$ANDROID_HOME/build-tools/36.0.0/zipalign" out/signing-tools/zipalign
+          chmod +x out/signing-tools/apksigner out/signing-tools/zipalign
           sha256sum out/WoW-Reader-v63-100k-experimental-debug.apk | tee out/SHA256SUMS.txt
 
       - name: Upload experimental artifact
