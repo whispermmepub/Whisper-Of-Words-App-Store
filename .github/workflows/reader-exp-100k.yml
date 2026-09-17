@@ -65,9 +65,9 @@ jobs:
       - name: Verify package identity
         working-directory: reader
         run: |
-          grep -q 'applicationId "com.whisper.wowreader"' app/build.gradle
+          grep -q "applicationId 'com.whisper.wowreader'" app/build.gradle
           grep -q 'versionCode 63' app/build.gradle
-          grep -q 'versionName "2.19.3"' app/build.gradle
+          grep -q "versionName '2.19.3'" app/build.gradle
 
       - name: Build experimental debug APK
         working-directory: reader
