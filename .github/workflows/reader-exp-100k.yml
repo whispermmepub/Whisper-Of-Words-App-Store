@@ -62,6 +62,15 @@ jobs:
             echo 'No experimental patch script yet; building clean v63 baseline.'
           fi
 
+      - name: Run 100k pure-Java contract tests
+        shell: bash
+        run: |
+          rm -rf /tmp/wow-reader-tests && mkdir -p /tmp/wow-reader-tests
+          javac -d /tmp/wow-reader-tests \
+            reader/app/src/main/java/com/whisper/wowreader/LibraryQuerySpec.java \
+            build-lab/reader-exp/tests/LibraryQuerySpecTest.java
+          java -cp /tmp/wow-reader-tests com.whisper.wowreader.LibraryQuerySpecTest
+
       - name: Verify package identity
         working-directory: reader
         run: |
