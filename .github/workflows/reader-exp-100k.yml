@@ -55,11 +55,14 @@ jobs:
           "$SDKMANAGER" --list_installed | grep -E 'platforms;android-36|build-tools;36.0.0'
 
       - name: Apply experimental patches
+        shell: bash
         run: |
-          if [ -f build-lab/reader-exp/apply.py ]; then
-            python3 build-lab/reader-exp/apply.py "$GITHUB_WORKSPACE/reader"
-          else
-            echo 'No experimental patch script yet; building clean v63 baseline.'
+          python3 build-lab/reader-exp/apply.py "$GITHUB_WORKSPACE/reader"
+          if compgen -G 'build-lab/reader-exp/patches/*.py' > /dev/null; then
+            for patch in $(find build-lab/reader-exp/patches -maxdepth 1 -name '*.py' | sort); do
+              echo "Applying $patch"
+              python3 "$patch" "$GITHUB_WORKSPACE/reader"
+            done
           fi
 
       - name: Run 100k pure-Java contract tests
@@ -68,8 +71,12 @@ jobs:
           rm -rf /tmp/wow-reader-tests && mkdir -p /tmp/wow-reader-tests
           javac -d /tmp/wow-reader-tests \
             reader/app/src/main/java/com/whisper/wowreader/LibraryQuerySpec.java \
-            build-lab/reader-exp/tests/LibraryQuerySpecTest.java
+            reader/app/src/main/java/com/whisper/wowreader/DriveObjectNamer.java \
+            reader/app/src/main/java/com/whisper/wowreader/SyncBatchPolicy.java \
+            build-lab/reader-exp/tests/LibraryQuerySpecTest.java \
+            build-lab/reader-exp/tests/IncrementalSyncContractTest.java
           java -cp /tmp/wow-reader-tests com.whisper.wowreader.LibraryQuerySpecTest
+          java -cp /tmp/wow-reader-tests com.whisper.wowreader.IncrementalSyncContractTest
 
       - name: Verify package identity
         working-directory: reader
