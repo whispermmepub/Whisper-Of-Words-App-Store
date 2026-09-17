@@ -1,0 +1,1 @@
+Trigger WoW Reader 100k experimental build after SDK setup fix.
