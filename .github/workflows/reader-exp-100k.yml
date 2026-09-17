@@ -73,10 +73,13 @@ jobs:
             reader/app/src/main/java/com/whisper/wowreader/LibraryQuerySpec.java \
             reader/app/src/main/java/com/whisper/wowreader/DriveObjectNamer.java \
             reader/app/src/main/java/com/whisper/wowreader/SyncBatchPolicy.java \
+            reader/app/src/main/java/com/whisper/wowreader/WholeBookPageModel.java \
             build-lab/reader-exp/tests/LibraryQuerySpecTest.java \
-            build-lab/reader-exp/tests/IncrementalSyncContractTest.java
+            build-lab/reader-exp/tests/IncrementalSyncContractTest.java \
+            build-lab/reader-exp/tests/WholeBookPageModelTest.java
           java -cp /tmp/wow-reader-tests com.whisper.wowreader.LibraryQuerySpecTest
           java -cp /tmp/wow-reader-tests com.whisper.wowreader.IncrementalSyncContractTest
+          java -cp /tmp/wow-reader-tests com.whisper.wowreader.WholeBookPageModelTest
 
       - name: Verify package identity
         working-directory: reader
