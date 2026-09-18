@@ -1,0 +1,19 @@
+# Local/editor state
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Generated/build output
+build/
+dist/
+out/
+*.apk
+*.aab
+*.zip
+*.tar
+*.gz
+
+# Temporary/generated preview conversions
+*.b64
+*.b64.*
