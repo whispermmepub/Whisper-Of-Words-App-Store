@@ -224,6 +224,6 @@ rep(main,
 '''LinearLayout sheet=premiumSheet("Find cover online","Google Books + Open Library · edit Title / Author / ISBN and search",d);''')
 rep(main,
 '''TextView text=new TextView(this);text.setText(r.title);text.setTextSize(9f);text.setMaxLines(2);''',
-'''TextView text=new TextView(this);text.setText(r.title+(r.source.isEmpty()?"":"\n"+r.source));text.setTextSize(9f);text.setMaxLines(3);''')
+'''TextView text=new TextView(this);text.setText(r.title+(r.source.isEmpty()?"":"\\n"+r.source));text.setTextSize(9f);text.setMaxLines(3);''')
 
 print('Applied Phase F: Drive 124-byte property fix + broad multi-provider cover search')
