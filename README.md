@@ -1,16 +1,52 @@
 # Whisper Of Words App Store
 
-A lightweight, Play Store-inspired catalog for Whisper Of Words apps.
+A lightweight, GitHub Pages-based catalog for Whisper Of Words Android apps.
 
-The public storefront is built as a static GitHub Pages site. App metadata lives in `data/apps.json`, while each app keeps its screenshots and install files under `apps/<slug>/`.
+## Current state
 
-## Adding another app
+- Static storefront: GitHub Pages
+- Catalog data: `data/apps.json` + `data/wow-note.json`
+- App assets: `apps/<slug>/`
+- Current WoW Reader development/release source of truth: `whispermmepub/wow-reader-lab`
+- Current WoW Reader release line: **v2.20.0 / versionCode 64**
+- WoW Reader package: `com.whisper.wowreader`
+- The App Store repository is only the storefront/distribution layer; Android source code is not copied here.
 
-1. Add its APK and screenshots under `apps/<slug>/`.
-2. Add one entry to `data/apps.json`.
-3. The home catalog and app detail view update from the same data.
+## Adding a release
 
-Current app: **WoW Reader**.
+1. Build and verify the release from the source repository.
+2. Publish the intended APK under `apps/<slug>/`.
+3. Update the matching entry in `data/apps.json` with version, size, date and APK path.
+4. Keep screenshots/icons small and web-ready.
+5. Verify the GitHub Pages site and the APK download link before announcing the release.
 
-The current downloadable build is **WoW Reader v2.13.0**. Screenshots are optional;
-the detail page hides the preview section until screenshot paths are added to the catalog.
+For WoW Reader, do not publish a new APK by guessing the versionCode. Check the source repo and Play tracks first. Preserve the production package/signing identity.
+
+## Storage hygiene
+
+This repository should contain only storefront source, metadata and intentionally published app assets.
+
+Do **not** commit:
+- AABs, ZIP backups or build output
+- local IDE/editor state
+- generated temporary files
+- base64 staging files used only to transfer/repair previews
+
+Published APKs are intentionally allowed because this site is a direct-download app store.
+
+## Continuation with WoW Reader
+
+The latest Reader work is designed around large libraries (100,000+ books), incremental per-book Drive sync, resumable transfer checkpoints, paginated restore, SHA-256 integrity, tombstones, custom covers and whole-book page numbering.
+
+The App Store must stay independent of those internal Android implementation details. It only needs the final verified APK, metadata and screenshots. See `STORE_RELEASE_HANDOFF.md` for the current handoff/test checklist.
+
+## Current catalog
+
+The repository currently contains storefront listings for:
+- WoW Reader
+- WoW Note
+- WoW EPUB Maker
+- WoW OCR
+- WoW Proof Reader
+
+Preview-only listings remain download-disabled until their release APK is intentionally published.
