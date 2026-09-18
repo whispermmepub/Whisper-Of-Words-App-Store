@@ -50,6 +50,15 @@ final class CoverSearchPlanner {
         return a;
     }
 
+    static String webImageQuery(String title,String author,String isbn) {
+        String t=clean(title), a=clean(author), i=clean(isbn);
+        if(!t.isEmpty()&&!a.isEmpty()) return t+" "+a+" book cover";
+        if(!t.isEmpty()) return t+" book cover";
+        if(!i.isEmpty()) return i+" book cover";
+        if(!a.isEmpty()) return a+" book cover";
+        return "book cover";
+    }
+
     static String clean(String s){ return s==null?"":s.trim(); }
 }
 ''',encoding='utf-8')
@@ -211,7 +220,7 @@ final class GoogleBooksCoverSearch {
 # Make the UI accurately describe the broader providers and show where a result came from.
 main=java/'MainActivity.java'
 rep(main,
-'''LinearLayout sheet=premiumSheet("Find cover online","Google Books · edit Title / Author / ISBN and search",d);''',
+'''LinearLayout sheet=premiumSheet("Find cover online","Google Books + Open Library · edit Title / Author / ISBN and search",d);''',
 '''LinearLayout sheet=premiumSheet("Find cover online","Google Books + Open Library · edit Title / Author / ISBN and search",d);''')
 rep(main,
 '''TextView text=new TextView(this);text.setText(r.title);text.setTextSize(9f);text.setMaxLines(2);''',
