@@ -2,7 +2,7 @@
   "store":{"name":"Whisper Of Words App Store","developer":"Whisper Of Words"},
   "apps":[
     {
-      "slug":"wow-reader","name":"WoW Reader","developer":"Whisper Of Words","category":"Books & Reference","platform":"Android","price":"Free","version":"2.13.0","size":"2.8 MB","android":"6.0+","updated":"September 1, 2026","packageName":"com.whisper.wowreader","icon":"apps/wow-reader/icon.webp","apk":"apps/wow-reader/WoW-Reader-v2.13.0.apk","source":"https://github.com/whispermmepub/wow-reader-app",
+      "slug":"wow-reader","name":"WoW Reader","developer":"Whisper Of Words","category":"Books & Reference","platform":"Android","price":"Free","version":"2.13.0","size":"2.8 MB","android":"6.0+","updated":"September 1, 2026","packageName":"com.whisper.wowreader","icon":"apps/wow-reader/icon.webp","apk":"apps/wow-reader/WoW-Reader-v2.13.0.apk","source":"https://github.com/whispermmepub/wow-reader-lab",
       "shortDescription":"A private, elegant EPUB & PDF reader built for comfortable Myanmar and English reading.",
       "description":"WoW Reader brings your EPUB and PDF library into a clean, distraction-free reading space. Import books once, organize them by title or author, read in immersive full screen, tune typography, use your own Myanmar fonts, and keep highlights, notes and reading progress on your device.",
       "tags":["EPUB","PDF","Myanmar","Reader","Library","Notes"],
