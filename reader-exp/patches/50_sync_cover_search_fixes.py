@@ -230,6 +230,6 @@ rep(main,
 '''TextView none=new TextView(this);none.setText("No catalog cover results. Try a simpler/original title or Search Google Images.");grid.addView(none);return;''')
 rep(main,
 '''TextView text=new TextView(this);text.setText(r.title);text.setTextSize(9f);text.setMaxLines(2);''',
-'''TextView text=new TextView(this);text.setText(r.title+(r.source.isEmpty()?"":"\n"+r.source));text.setTextSize(9f);text.setMaxLines(3);''')
+'''TextView text=new TextView(this);text.setText(r.title+(r.source.isEmpty()?"":"\\n"+r.source));text.setTextSize(9f);text.setMaxLines(3);''')
 
 print('Applied Phase F: Drive 124-byte property fix + broad multi-provider cover search + Google Images fallback')
