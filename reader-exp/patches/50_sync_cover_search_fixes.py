@@ -220,10 +220,16 @@ final class GoogleBooksCoverSearch {
 # Make the UI accurately describe the broader providers and show where a result came from.
 main=java/'MainActivity.java'
 rep(main,
-'''LinearLayout sheet=premiumSheet("Find cover online","Google Books + Open Library · edit Title / Author / ISBN and search",d);''',
+'''LinearLayout sheet=premiumSheet("Find cover online","Google Books · edit Title / Author / ISBN and search",d);''',
 '''LinearLayout sheet=premiumSheet("Find cover online","Google Books + Open Library · edit Title / Author / ISBN and search",d);''')
 rep(main,
+'''sheet.addView(search,sp);ScrollView scroll=new ScrollView(this);''',
+'''sheet.addView(search,sp);TextView webImages=filterChoice("Search Google Images",false);webImages.setGravity(Gravity.CENTER);LinearLayout.LayoutParams wip=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,dp(40));wip.topMargin=dp(5);sheet.addView(webImages,wip);webImages.setOnClickListener(v->{try{String q=CoverSearchPlanner.webImageQuery(title.getText().toString(),author.getText().toString(),isbn.getText().toString());startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com/search?tbm=isch&q="+Uri.encode(q))));}catch(Exception e){Toast.makeText(this,"Unable to open Google Images",Toast.LENGTH_SHORT).show();}});ScrollView scroll=new ScrollView(this);''')
+rep(main,
+'''TextView none=new TextView(this);none.setText("No cover results");grid.addView(none);return;''',
+'''TextView none=new TextView(this);none.setText("No catalog cover results. Try a simpler/original title or Search Google Images.");grid.addView(none);return;''')
+rep(main,
 '''TextView text=new TextView(this);text.setText(r.title);text.setTextSize(9f);text.setMaxLines(2);''',
-'''TextView text=new TextView(this);text.setText(r.title+(r.source.isEmpty()?"":"\\n"+r.source));text.setTextSize(9f);text.setMaxLines(3);''')
+'''TextView text=new TextView(this);text.setText(r.title+(r.source.isEmpty()?"":"\n"+r.source));text.setTextSize(9f);text.setMaxLines(3);''')
 
-print('Applied Phase F: Drive 124-byte property fix + broad multi-provider cover search')
+print('Applied Phase F: Drive 124-byte property fix + broad multi-provider cover search + Google Images fallback')
