@@ -65,6 +65,19 @@ jobs:
             done
           fi
 
+      - name: Verify Drive resumable metadata hardening
+        shell: bash
+        run: |
+          DRIVE=reader/app/src/main/java/com/whisper/wowreader/GoogleDriveSync.java
+          DB=reader/app/src/main/java/com/whisper/wowreader/ReaderStateDb.java
+          if grep -n 'appProperties\|properties' "$DRIVE"; then
+            echo "Drive upload metadata must not contain properties/appProperties"
+            exit 1
+          fi
+          grep -q 'DB_VERSION = 6' "$DB"
+          grep -q "UPDATE books SET upload_session_url='', upload_offset=0 WHERE sync_dirty=1" "$DB"
+          grep -q "UPDATE books SET cover_upload_session_url='', cover_upload_offset=0 WHERE cover_sync_dirty=1" "$DB"
+
       - name: Run 100k pure-Java contract tests
         shell: bash
         run: |
