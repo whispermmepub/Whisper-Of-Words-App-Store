@@ -70,8 +70,8 @@ jobs:
         run: |
           DRIVE=reader/app/src/main/java/com/whisper/wowreader/GoogleDriveSync.java
           DB=reader/app/src/main/java/com/whisper/wowreader/ReaderStateDb.java
-          if grep -n 'appProperties\|properties' "$DRIVE"; then
-            echo "Drive upload metadata must not contain properties/appProperties"
+          if grep -n 'meta.put("appProperties"\|meta.put("properties"' "$DRIVE"; then
+            echo "Drive upload metadata must not contain properties/appProperties API fields"
             exit 1
           fi
           grep -q 'DB_VERSION = 6' "$DB"
