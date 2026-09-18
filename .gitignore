@@ -4,11 +4,10 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Generated/build output
+# Generated/build output (keep published APK files under apps/ tracked)
 build/
 dist/
 out/
-*.apk
 *.aab
 *.zip
 *.tar
