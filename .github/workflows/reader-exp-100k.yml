@@ -74,12 +74,18 @@ jobs:
             reader/app/src/main/java/com/whisper/wowreader/DriveObjectNamer.java \
             reader/app/src/main/java/com/whisper/wowreader/SyncBatchPolicy.java \
             reader/app/src/main/java/com/whisper/wowreader/WholeBookPageModel.java \
+            reader/app/src/main/java/com/whisper/wowreader/DriveAppPropertyPolicy.java \
+            reader/app/src/main/java/com/whisper/wowreader/CoverSearchPlanner.java \
             build-lab/reader-exp/tests/LibraryQuerySpecTest.java \
             build-lab/reader-exp/tests/IncrementalSyncContractTest.java \
-            build-lab/reader-exp/tests/WholeBookPageModelTest.java
+            build-lab/reader-exp/tests/WholeBookPageModelTest.java \
+            build-lab/reader-exp/tests/DriveAppPropertyPolicyTest.java \
+            build-lab/reader-exp/tests/CoverSearchPlannerTest.java
           java -cp /tmp/wow-reader-tests com.whisper.wowreader.LibraryQuerySpecTest
           java -cp /tmp/wow-reader-tests com.whisper.wowreader.IncrementalSyncContractTest
           java -cp /tmp/wow-reader-tests com.whisper.wowreader.WholeBookPageModelTest
+          java -cp /tmp/wow-reader-tests com.whisper.wowreader.DriveAppPropertyPolicyTest
+          java -cp /tmp/wow-reader-tests com.whisper.wowreader.CoverSearchPlannerTest
 
       - name: Verify package identity
         working-directory: reader
