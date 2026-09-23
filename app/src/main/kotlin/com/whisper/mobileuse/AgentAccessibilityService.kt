@@ -7,6 +7,7 @@ import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import java.util.concurrent.Executors
 import android.view.accessibility.AccessibilityWindowInfo
+import android.graphics.Rect
 data class Action(val type:String,val text:String="",val x:Float=0f,val y:Float=0f,val direction:String="")
 class AgentAccessibilityService:AccessibilityService(){
  companion object{var instance:AgentAccessibilityService?=null};private val executor=Executors.newSingleThreadExecutor()
