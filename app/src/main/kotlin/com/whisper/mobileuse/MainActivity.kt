@@ -10,7 +10,7 @@ class MainActivity:Activity(){
  private val executor=Executors.newSingleThreadExecutor()
  private lateinit var endpoint:EditText;private lateinit var key:EditText;private lateinit var command:EditText;private lateinit var log:TextView
  override fun onCreate(b:Bundle?){super.onCreate(b);val root=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setPadding(28,28,28,28)}
- val title=TextView(this).apply{text="Mobile Use";textSize=28f};endpoint=EditText(this).apply{hint="LLM endpoint";setText(prefs.getString("endpoint",""))};key=EditText(this).apply{hint="API key (stored locally)";inputType=0x81};command=EditText(this).apply{hint="Tell Mobile Use what to do";minLines=3};log=TextView(this)
+ val title=TextView(this).apply{text="Mobile Use";textSize=28f};endpoint=EditText(this).apply{hint="LLM endpoint";setText(prefs.getString("endpoint","https://api.openai.com/v1/chat/completions"))};key=EditText(this).apply{hint="API key (stored locally)";inputType=0x81};command=EditText(this).apply{hint="Tell Mobile Use what to do";minLines=3};log=TextView(this)
  val save=Button(this).apply{text="Save API settings"};val access=Button(this).apply{text="Enable Accessibility"};val run=Button(this).apply{text="Run"}
  save.setOnClickListener{prefs.edit().putString("endpoint",endpoint.text.toString().trim()).putString("key",key.text.toString()).apply();log.text="Saved locally."}
  access.setOnClickListener{startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))}
