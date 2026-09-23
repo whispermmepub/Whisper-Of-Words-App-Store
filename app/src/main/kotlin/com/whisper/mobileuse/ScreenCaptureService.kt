@@ -7,6 +7,8 @@ import android.graphics.PixelFormat
 import android.hardware.display.DisplayManager
 import android.media.ImageReader
 import android.media.projection.MediaProjection
+import android.media.projection.MediaProjectionManager
+import android.content.pm.ServiceInfo
 import android.os.*
 import java.io.ByteArrayOutputStream
 
