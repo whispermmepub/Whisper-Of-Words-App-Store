@@ -15,5 +15,8 @@ class MainActivity:Activity(){
  save.setOnClickListener{prefs.edit().putString("endpoint",endpoint.text.toString().trim()).putString("key",key.text.toString()).apply();log.text="Saved locally."}
  access.setOnClickListener{startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))}
  run.setOnClickListener{val s=AgentAccessibilityService.instance;val task=command.text.toString().trim();if(s==null){log.text="Enable Mobile Use in Accessibility settings first.";return@setOnClickListener};if(task.isEmpty()){log.text="Enter a task.";return@setOnClickListener};log.text="Planning...";executor.execute{val p=LlmClient.plan(this,task,s.snapshot());runOnUiThread{log.text=p.message};if(p.actions.isNotEmpty())s.execute(p.actions)}}
- root.addView(title);root.addView(endpoint);root.addView(key);root.addView(save);root.addView(access);root.addView(command);root.addView(run);root.addView(log);setContentView(root)}
+ root.addView(title);root.addView(endpoint);root.addView(key);root.addView(save);root.addView(access);root.addView(command);root.addView(run);root.addView(log);val capture=Button(this).apply{text="Allow Screen Capture"}
+  capture.setOnClickListener{ScreenCaptureManager.request(this@MainActivity)}
+  root.addView(capture)
+  setContentView(root)}
 }
